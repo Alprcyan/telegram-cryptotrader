@@ -9,7 +9,7 @@ if (!config.botToken) {
 const bot = new Botgram(config.botToken);
 
 const foo = (handler) => {
-    return functions (msg, reply) {
+    return function (msg, reply) {
         try {
             handler(msg, reply);
         }
