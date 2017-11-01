@@ -6,7 +6,11 @@ const HELP_TEXT = "<b>Blockchain Info Bot - by libertylocked</b>\n" +
   "\n<b>GitHub</b>: <a>https://github.com/libertylocked/telegram-cryptotrader</a>";
 
 const handler = (msg, reply) => {
-    reply.html(HELP_TEXT);
+    try {
+        reply.html(HELP_TEXT);
+    } catch (err) {
+        console.log(err);
+    }
 };
 
 module.exports = handler;
