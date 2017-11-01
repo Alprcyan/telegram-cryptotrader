@@ -2,8 +2,8 @@ const Botgram = require("botgram");
 const config = require("./config");
 
 if (!config.botToken) {
-  console.error("No bot token specified. Please set BOT_TOKEN in env");
-  process.exit(1);
+    console.error("No bot token specified. Please set BOT_TOKEN in env");
+    process.exit(1);
 }
 
 const bot = new Botgram(config.botToken);

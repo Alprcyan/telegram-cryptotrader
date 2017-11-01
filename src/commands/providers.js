@@ -12,4 +12,12 @@ const handler = (msg, reply) => {
   reply.html(`<b>Supported providers</b>\n${allProviders.join("\n")}`);
 };
 
-module.exports = handler;
+// module.exports = handler;
+module.exports = (msg, reply) => {
+    try {
+        handler(msg, reply);
+    }
+    catch (err) {
+        console.log("Error: " + err)
+    }
+}
