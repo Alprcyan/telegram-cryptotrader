@@ -17,13 +17,4 @@ const handler = (msg, reply) => {
   }
 };
 
-// module.exports = handler;
-
-module.exports = (msg, reply) => {
-    try {
-        handler(msg, reply);
-    }
-    catch (err) {
-        console.log("Error: " + err)
-    }
-}
+module.exports = handler;

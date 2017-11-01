@@ -8,7 +8,18 @@ if (!config.botToken) {
 
 const bot = new Botgram(config.botToken);
 
-bot.command("price", require("./commands/price"));
-bot.command("providers", require("./commands/providers"));
-bot.command("eth", require("./commands/eth"));
-bot.command("help", "start", require("./commands/help"));
+const foo = (handler) => {
+    return functions (msg, reply) {
+        try {
+            handler(msg, reply);
+        }
+        catch (err) {
+            console.log('Error: ', err);
+        }
+    }
+}
+
+bot.command("price", foo(require("./commands/price")));
+bot.command("providers", foo(require("./commands/providers")));
+bot.command("eth", foo(require("./commands/eth")));
+bot.command("help", "start", foo(require("./commands/help")));

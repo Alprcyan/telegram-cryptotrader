@@ -9,11 +9,4 @@ const handler = (msg, reply) => {
     reply.html(HELP_TEXT);
 };
 
-module.exports = (msg, reply) => {
-    try {
-        handler(msg, reply);
-    }
-    catch (err) {
-        console.log("Error: " + err)
-    }
-}
+module.exports = handler;
