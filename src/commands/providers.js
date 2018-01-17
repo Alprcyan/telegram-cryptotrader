@@ -9,7 +9,12 @@ const handler = (msg, reply) => {
     allProviders.push(exchange);
   }
 
-  reply.html(`<b>Supported providers</b>\n${allProviders.join("\n")}`);
+  reply.html(`<b>Supported providers</b>\n${allProviders.join("\n")}`).then((err, result) => {
+    if (err)
+      console.error("Sending message failed!");
+    else
+      console.log("Sent message:", result);
+  });
 };
 
 module.exports = handler;

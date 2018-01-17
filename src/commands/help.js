@@ -6,11 +6,12 @@ const HELP_TEXT = "<b>Blockchain Info Bot - by libertylocked</b>\n" +
   "\n<b>GitHub</b>: <a>https://github.com/libertylocked/telegram-cryptotrader</a>";
 
 const handler = (msg, reply) => {
-    try {
-        reply.html(HELP_TEXT);
-    } catch (err) {
-        console.log(err);
-    }
+    reply.html(HELP_TEXT).then((err, result) => {
+        if (err)
+            console.error("Sending message failed!");
+        else
+            console.log("Sent message:", result);
+        })
 };
 
 module.exports = handler;

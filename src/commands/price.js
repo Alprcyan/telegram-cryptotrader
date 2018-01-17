@@ -5,7 +5,12 @@ const handler = (msg, reply) => {
   let baseCurrency = args[0] || "ETH";
   let quoteCurrency = args[1] || "USD";
   if (!/^[a-zA-Z0-9]+$/.test(baseCurrency) || !/^[a-zA-Z0-9]+$/.test(quoteCurrency)) {
-    reply.text("Invalid input currency");
+    reply.text("Invalid input currency").then((err, result) => {
+      if (err)
+        console.error("Sending message failed!");
+      else
+        console.log("Sent message:", result);
+    });
     return;
   }
 
@@ -28,7 +33,12 @@ const handler = (msg, reply) => {
 
   prom.then(() => {
     botReply = botReply || "\n<i>No data</i>";
-    reply.html(`<b>${baseCurrency} - ${quoteCurrency}</b> ${botReply}`);
+    reply.html(`<b>${baseCurrency} - ${quoteCurrency}</b> ${botReply}`).then((err, result) => {
+      if (err)
+        console.error("Sending message failed!");
+      else
+        console.log("Sent message:", result);
+    });
   });
 };
 
