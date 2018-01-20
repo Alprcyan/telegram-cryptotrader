@@ -2,7 +2,7 @@ const fetch = require("isomorphic-fetch");
 const redisClient = require("../redis-client");
 
 module.exports = (base, quote) => {
-  const redisKey = `Bitfinex:${base}-${quote}`;
+  const redisKey = `Binance:${base}-${quote}`;
   const requestURL = `https://api.binance.com/api/v3/price?${base}${quote}`;
 
   return redisClient.getAsync(redisKey).then((data) => {
