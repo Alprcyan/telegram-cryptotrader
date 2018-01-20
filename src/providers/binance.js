@@ -3,7 +3,7 @@ const redisClient = require("../redis-client");
 
 module.exports = (base, quote) => {
   const redisKey = `Binance:${base}-${quote}`;
-  const requestURL = `https://api.binance.com/api/v3/price?symbol=${base}${quote}`;
+  const requestURL = `https://api.binance.com/api/v3/ticker/price?symbol=${base}${quote}`;
 
   return redisClient.getAsync(redisKey).then((data) => {
     if (data != null) {
