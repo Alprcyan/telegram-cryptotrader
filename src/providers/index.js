@@ -5,5 +5,5 @@ module.exports = {
   "Bitfinex": require("./bitfinex"),
   "HitBTC": require("./hitbtc"),
   "Poloniex": require("./poloniex"),
-  "Binance": request("./binance"),
+  "Binance": require("./binance"),
 };
