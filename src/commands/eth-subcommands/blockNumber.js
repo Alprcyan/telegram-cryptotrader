@@ -3,17 +3,17 @@ module.exports = (reply, web3, args) => {
     .then((bNumber) => {
       reply.text(bNumber).then((err, result) => {
         if (err)
-          console.error("Sending message failed!");
+          console.error("\nSending message failed!");
         else
-          console.log("Sent message:", result);
+          console.log("\nSent message:", result);
       });
     })
     .catch((err) => {
       reply.text("Error getting block number").then((err, result) => {
         if (err)
-          console.error("Sending message failed!");
+          console.error("\nSending message failed!");
         else
-          console.log("Sent message:", result);
+          console.log("\nSent message:", result);
       });
     });
 };

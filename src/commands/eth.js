@@ -5,12 +5,12 @@ const subcommands = require("./eth-subcommands");
 const handler = (msg, reply) => {
   const [subcommand, ...args] = msg.args(2);
   if (!subcommand) {
-    reply.text("Subcommand required.\nAvailable subcommands are:\n\n" +
+    reply.text("\nSubcommand required.\nAvailable subcommands are:\n\n" +
       Object.keys(subcommands).join("\n")).then((err, result) => {
         if (err)
-          console.error("Sending message failed!");
+          console.error("\nSending message failed!");
         else
-          console.log("Sent message:", result);
+          console.log("\nSent message:", result);
       });
     return;
   }
@@ -20,9 +20,9 @@ const handler = (msg, reply) => {
   } else {
     reply.text("Unknown subcommand: " + subcommand).then((err, result) => {
       if (err)
-        console.error("Sending message failed!");
+        console.error("\nSending message failed!");
       else
-        console.log("Sent message:", result);
+        console.log("\nSent message:", result);
     });
   }
 };

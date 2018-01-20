@@ -11,9 +11,9 @@ const handler = (msg, reply) => {
 
   reply.html(`<b>Supported providers</b>\n${allProviders.join("\n")}`).then((err, result) => {
     if (err)
-      console.error("Sending message failed!");
+      console.error("\nSending message failed!");
     else
-      console.log("Sent message:", result);
+      console.log("\nSent message:", result);
   });
 };
 

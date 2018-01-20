@@ -7,9 +7,9 @@ const handler = (msg, reply) => {
   if (!/^[a-zA-Z0-9]+$/.test(baseCurrency) || !/^[a-zA-Z0-9]+$/.test(quoteCurrency)) {
     reply.text("Invalid input currency").then((err, result) => {
       if (err)
-        console.error("Sending message failed!");
+        console.error("\nSending message failed!");
       else
-        console.log("Sent message:", result);
+        console.log("\nSent message:", result);
     });
     return;
   }
@@ -35,9 +35,9 @@ const handler = (msg, reply) => {
     botReply = botReply || "\n<i>No data</i>";
     reply.html(`<b>${baseCurrency} - ${quoteCurrency}</b> ${botReply}`).then((err, result) => {
       if (err)
-        console.error("Sending message failed!");
+        console.error("\nSending message failed!");
       else
-        console.log("Sent message:", result);
+        console.log("\nSent message:", result);
     });
   });
 };
