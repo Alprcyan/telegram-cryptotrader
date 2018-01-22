@@ -18,8 +18,9 @@ const bot = new Botgram(config.botToken);
 
 var foo = (path) => {
     return (msg, reply) => {
-        var bar = require(path);
-        var prom = new Promise(resolve, reject);
+        var prom = new Promise((resolve, reject) => {
+            require(path);
+        });
 
         prom.catch((err) => {
             console.log(err);
