@@ -11,26 +11,26 @@ if (!config.botToken) {
 
 const bot = new Botgram(config.botToken);
 
-// bot.command("price", require("./commands/price"));
-// bot.command("providers", require("./commands/providers"));
-// bot.command("eth", require("./commands/eth"));
-// bot.command("help", "start", require("./commands/help"));
+bot.command("price", require("./commands/price"));
+bot.command("providers", require("./commands/providers"));
+bot.command("eth", require("./commands/eth"));
+bot.command("help", "start", require("./commands/help"));
 
-var foo = (path) => {
-    return (msg, reply) => {
-        var prom = new Promise((resolve, reject) => {
-            require(path);
-        });
+// var foo = (path) => {
+//     return (msg, reply) => {
+//         var prom = new Promise((resolve, reject) => {
+//             require(path);
+//         });
 
-        prom.catch((err) => {
-            console.log(err);
-        });
+//         prom.catch((err) => {
+//             console.log(err);
+//         });
 
-        return prom;
-    }
-}
+//         return prom;
+//     }
+// }
 
-bot.command("price", foo("./commands/price"));
-bot.command("providers", foo("./commands/providers"));
-bot.command("eth", foo("./commands/eth"));
-bot.command("help", "start", foo("./commands/help"));
+// bot.command("price", foo("./commands/price"));
+// bot.command("providers", foo("./commands/providers"));
+// bot.command("eth", foo("./commands/eth"));
+// bot.command("help", "start", foo("./commands/help"));
