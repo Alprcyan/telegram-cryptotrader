@@ -9,7 +9,8 @@ const handler = (msg, reply) => {
     allProviders.push(exchange);
   }
 
-  reply.html(`<b>Supported providers</b>\n${allProviders.join("\n")}`).then((err, result) => {
+  reply.html(`<b>Supported providers</b>\n${allProviders.join("\n")}`)
+      .then((err, result) => {
     if (err)
       console.error("\nSending message failed!");
     else

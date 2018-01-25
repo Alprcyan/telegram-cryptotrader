@@ -13,7 +13,7 @@ module.exports = (base, quote) => {
         if (resp.status != 200) throw new Error(resp.status);
         return resp.json();
       }).then((data) => {
-        let price = parseFloat(data.result.Last);
+        const price = parseFloat(data.result.Last);
         redisClient.setex(redisKey, 30, price);
         return price;
       });

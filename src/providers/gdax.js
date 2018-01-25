@@ -2,7 +2,7 @@ const fetch = require("isomorphic-fetch");
 const redisClient = require("../redis-client");
 
 const SUPPORTED_BASE_CURRENCIES = [
-  "BTC", "ETH", "LTC", "BCH"
+  "BTC", "ETH", "LTC", "BCH",
 ];
 const SUPPORTED_QUOTE_CURRENCIES = [
   "USD", "GBP", "EUR",

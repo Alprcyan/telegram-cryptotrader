@@ -7,11 +7,11 @@ const handler = (msg, reply) => {
   if (!subcommand) {
     reply.text("\nSubcommand required.\nAvailable subcommands are:\n\n" +
       Object.keys(subcommands).join("\n")).then((err, result) => {
-        if (err)
-          console.error("\nSending message failed!");
-        else
-          console.log("\nSent message:", result);
-      });
+      if (err)
+        console.error("\nSending message failed!");
+      else
+        console.log("\nSent message:", result);
+    });
     return;
   }
 

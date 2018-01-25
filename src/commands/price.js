@@ -33,7 +33,8 @@ const handler = (msg, reply) => {
 
   prom.then(() => {
     botReply = botReply || "\n<i>No data</i>";
-    reply.html(`<b>${baseCurrency} - ${quoteCurrency}</b> ${botReply}`).then((err, result) => {
+    reply.html(`<b>${baseCurrency} - ${quoteCurrency}</b> ${botReply}`)
+        .then((err, result) => {
       if (err)
         console.error("\nSending message failed!");
       else

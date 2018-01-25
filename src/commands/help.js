@@ -11,7 +11,7 @@ const handler = (msg, reply) => {
             console.error("\nSending message failed!");
         else
             console.log("\nSent message:", result);
-        })
+        });
 };
 
 module.exports = handler;
