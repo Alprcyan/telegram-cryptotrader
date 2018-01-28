@@ -17,7 +17,6 @@ const foo = (func) => {
   return (msg, reply) => {
     let prom = new Promise((resolve, reject) => {
         func(msg, reply);
-        console.log("Promise: " + func);
     });
     prom.catch((error) => {
       console.log("Error: " + error);
