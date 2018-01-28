@@ -17,9 +17,10 @@ const foo = (func) => {
   return (msg, reply) => {
     let prom = new Promise((resolve, reject) => {
         func(msg, reply);
+        console.log("Promise: " + func);
     });
     prom.catch((error) => {
-      console.log("Error msg: " + msg);
+      console.log("Error: " + error);
     });
     return prom;
   }
@@ -29,9 +30,3 @@ bot.command("price", foo(funcPrice));
 bot.command("providers", foo(funcProviders));
 bot.command("eth", foo(funcEth));
 bot.command("help", "start", foo(funcHelp));
-
-
-// bot.command("price", require("./commands/price"));
-// bot.command("providers", require("./commands/providers"));
-// bot.command("eth", require("./commands/eth"));
-// bot.command("help", "start", require("./commands/help"));
